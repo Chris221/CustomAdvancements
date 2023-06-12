@@ -228,7 +228,7 @@ public class CAdvancement {
 		if (description == null) return "No Description";
 		CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA description: " + description);
 		CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA CustomAdvancements.getInstance().isPapiSupport(): " + CustomAdvancements.getInstance().isPapiSupport());
-		CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA player != null: " + player != null);
+		CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA player != null: " + (player != null ? 'true' : 'false'));
 		String tempDescription = description;
 		CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA start tempDescription: " + tempDescription);
 		if (CustomAdvancements.getInstance().isPapiSupport() && player != null) {
