@@ -228,10 +228,18 @@ public class CAdvancement {
 		System.out.println("SIENA description: " + description);
 		System.out.println("SIENA CustomAdvancements.getInstance().isPapiSupport(): " + CustomAdvancements.getInstance().isPapiSupport());
 		System.out.println("SIENA player != null: " + player != null);
-		if (CustomAdvancements.getInstance().isPapiSupport() && player != null)
-			return ChatColor.translateAlternateColorCodes('&',PlaceholderAPI.setPlaceholders(player,description));
-		else
-			return ChatColor.translateAlternateColorCodes('&',description);
+		String tempDescription = description;
+		System.out.println("SIENA start tempDescription: " + tempDescription);
+		if (CustomAdvancements.getInstance().isPapiSupport() && player != null) {
+			String tempPlaceholder = PlaceholderAPI.setPlaceholders(player,description);
+			System.out.println("SIENA end tempPlaceholder: " + tempPlaceholder);
+			tempDescription = ChatColor.translateAlternateColorCodes('&',tempPlaceholder);
+		} else {
+			tempDescription = ChatColor.translateAlternateColorCodes('&',description);
+		}
+		System.out.println("SIENA end tempDescription: " + tempDescription);
+		return tempDescription;
+		
 	}
 
 	public MinecraftProgressType getMinecraftProgressType() {
