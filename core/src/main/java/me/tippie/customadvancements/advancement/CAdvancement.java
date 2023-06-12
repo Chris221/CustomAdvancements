@@ -225,19 +225,20 @@ public class CAdvancement {
 
 	public String getDescription(Player player) {
 		if (description == null) return "No Description";
-		System.out.println("SIENA description: " + description);
-		System.out.println("SIENA CustomAdvancements.getInstance().isPapiSupport(): " + CustomAdvancements.getInstance().isPapiSupport());
-		System.out.println("SIENA player != null: " + player != null);
+		CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA description: " + description);
+		CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA CustomAdvancements.getInstance().isPapiSupport(): " + CustomAdvancements.getInstance().isPapiSupport());
+		CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA player != null: " + player != null);
 		String tempDescription = description;
-		System.out.println("SIENA start tempDescription: " + tempDescription);
+		CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA start tempDescription: " + tempDescription);
 		if (CustomAdvancements.getInstance().isPapiSupport() && player != null) {
 			String tempPlaceholder = PlaceholderAPI.setPlaceholders(player,description);
 			System.out.println("SIENA end tempPlaceholder: " + tempPlaceholder);
+			CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA end tempPlaceholder: " + tempPlaceholder);
 			tempDescription = ChatColor.translateAlternateColorCodes('&',tempPlaceholder);
 		} else {
 			tempDescription = ChatColor.translateAlternateColorCodes('&',description);
 		}
-		System.out.println("SIENA end tempDescription: " + tempDescription);
+		CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA end tempDescription: " + tempDescription);
 		return tempDescription;
 		
 	}
