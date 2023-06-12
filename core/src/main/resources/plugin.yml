@@ -4,8 +4,8 @@ main: me.tippie.customadvancements.CustomAdvancements
 website: https://tippie.me
 author: Tippie
 api-version: 1.13
-depend: [ PlaceholderAPI ]
-softdepend: [ Essentials, WorldGuard ]
+softdepend: [ Essentials, PlaceholderAPI, WorldGuard ]
+load: POSTWORLD
 commands:
   customadvancements:
     aliases: [ ca , advancements]
