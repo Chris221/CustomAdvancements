@@ -155,7 +155,7 @@ public class AdvancementManager {
         String[] tempArray;
         for (AdvancementTree tree : advancementTrees.values()) {
             for(String path : tree.getPaths()) {
-                tempArray.push(path);
+                tempArray[] = path;
             }
         }
         return tempArray;

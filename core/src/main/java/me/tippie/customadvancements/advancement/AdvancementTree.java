@@ -206,7 +206,7 @@ public class AdvancementTree {
 				val minecraftProgressType = displayOptions.getString("minecraft-progress-type", "AUTO");
 
 				advancements.put(advancementLabel, new CAdvancement(advancementType, advancementValue, amount, advancementLabel, this.label, rewards, requirements, displayName, displayDescription, displayItem, guiLocation, displayUnit, minecraftGuiFrame, minecraftToast, minecraftChatAnnounce, minecraftProgressType));
-				treePaths.put(config.getName() + advancementLabel);
+				treePaths[] = config.getName() + advancementLabel;
 			}
 
 			//Initialize options
