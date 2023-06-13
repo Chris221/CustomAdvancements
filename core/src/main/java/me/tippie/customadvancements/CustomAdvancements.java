@@ -18,6 +18,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
 import java.util.logging.Level;
 
 /**
@@ -274,5 +275,9 @@ public final class CustomAdvancements extends JavaPlugin {
 
 		messagesFile.getConfig().options().copyDefaults(true);
 		messagesFile.saveConfig();
+	}
+
+	public List<String> getAllPaths() {
+		return advancementManager.getAdvancementTreePaths();
 	}
 }

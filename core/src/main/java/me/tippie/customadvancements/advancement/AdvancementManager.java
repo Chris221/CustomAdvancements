@@ -144,6 +144,19 @@ public class AdvancementManager {
     }
 
     /**
+     * Converts map {@link AdvancementManager#advancementTrees} into a list of paths and returns it.
+     *
+     * @return list of all registered {@link AdvancementTree}'s paths
+     */
+    public List<String> getAdvancementTreePaths() {
+        List<String> tempArray = new ArrayList<>();
+        for (AdvancementTree tree : advancementTrees.values()) {
+            tempArray.addAll(tree.getPaths());
+        }
+        return tempArray;
+    }
+
+    /**
      * Searches {@link AdvancementManager#advancementTrees} for the tree matching the label
      *
      * @param label the unique label of an {@link AdvancementTree}

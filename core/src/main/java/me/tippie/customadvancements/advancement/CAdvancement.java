@@ -13,6 +13,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
+import java.util.logging.Level;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -225,10 +226,21 @@ public class CAdvancement {
 
 	public String getDescription(Player player) {
 		if (description == null) return "No Description";
-		if (CustomAdvancements.getInstance().isPapiSupport() && player != null)
-			return ChatColor.translateAlternateColorCodes('&',PlaceholderAPI.setPlaceholders(player,description));
-		else
-			return ChatColor.translateAlternateColorCodes('&',description);
+		// CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA description: " + description);
+		// CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA CustomAdvancements.getInstance().isPapiSupport(): " + CustomAdvancements.getInstance().isPapiSupport());
+		// CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA player != null: " + (player != null ? "true" : "false"));
+		String tempDescription = description;
+		// CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA start tempDescription: " + tempDescription);
+		if (CustomAdvancements.getInstance().isPapiSupport() && player != null) {
+			String tempPlaceholder = PlaceholderAPI.setPlaceholders(player,description);
+			// CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA tempPlaceholder: " + tempPlaceholder);
+			tempDescription = ChatColor.translateAlternateColorCodes('&',tempPlaceholder);
+		} else {
+			tempDescription = ChatColor.translateAlternateColorCodes('&',description);
+		}
+		// CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA end tempDescription: " + tempDescription);
+		return tempDescription;
+		
 	}
 
 	public MinecraftProgressType getMinecraftProgressType() {
