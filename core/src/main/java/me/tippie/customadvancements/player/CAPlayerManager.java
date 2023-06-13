@@ -32,13 +32,6 @@ public class CAPlayerManager {
 	public void loadPlayer(final Player player) {
 		if (!caPlayers.containsKey(player.getUniqueId())) {
 			CAPlayer localPlayer = new CAPlayer(player.getUniqueId());
-			for (String path : CustomAdvancements.getInstance().getAllPaths()) {
-				try {
-					localPlayer.updateMinecraftGui(path);
-				} catch (InvalidAdvancementException e) {
-					CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA failed to updateMinecraftGui: " + e.getMessage());
-				}
-			}
 			caPlayers.put(player.getUniqueId(), localPlayer);
 		}
 	}

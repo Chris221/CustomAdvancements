@@ -140,10 +140,7 @@ public class AdvancementManager {
      * @return list of all registered {@link AdvancementTree}'s
      */
     public List<AdvancementTree> getAdvancementTrees() {
-        CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA loaded here?");
-        val tempArray = new ArrayList<>(advancementTrees.values());
-        CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA loaded here?");
-        return tempArray;
+        return new ArrayList<>(advancementTrees.values());
     }
 
     /**

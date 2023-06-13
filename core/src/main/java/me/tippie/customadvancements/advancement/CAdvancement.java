@@ -233,8 +233,7 @@ public class CAdvancement {
 		CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA start tempDescription: " + tempDescription);
 		if (CustomAdvancements.getInstance().isPapiSupport() && player != null) {
 			String tempPlaceholder = PlaceholderAPI.setPlaceholders(player,description);
-			System.out.println("SIENA end tempPlaceholder: " + tempPlaceholder);
-			CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA end tempPlaceholder: " + tempPlaceholder);
+			CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA tempPlaceholder: " + tempPlaceholder);
 			tempDescription = ChatColor.translateAlternateColorCodes('&',tempPlaceholder);
 		} else {
 			tempDescription = ChatColor.translateAlternateColorCodes('&',description);

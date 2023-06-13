@@ -23,6 +23,8 @@ public class CAPlayerListener implements Listener {
 			CustomAdvancements.getCaPlayerManager().loadPlayer(event.getPlayer());
 		if (CustomAdvancements.getInternals() != null)
 			CustomAdvancements.getInternals().registerAdvancementTabListener(event.getPlayer());
+			
+		CustomAdvancements.getInstance().onReload();
 
 		CustomAdvancements.getInstance().getServer().getScheduler().runTaskLater(CustomAdvancements.getInstance(), () -> {
 			CAPlayer caPlayer = CustomAdvancements.getCaPlayerManager().getPlayer(event.getPlayer().getUniqueId());
