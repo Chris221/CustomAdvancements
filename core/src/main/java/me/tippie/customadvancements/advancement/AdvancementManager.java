@@ -141,7 +141,7 @@ public class AdvancementManager {
      */
     public List<AdvancementTree> getAdvancementTrees() {
         CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA loaded here?");
-        ArrayList<> tempArray = new ArrayList<>(advancementTrees.values());
+        val tempArray = new ArrayList<>(advancementTrees.values());
         CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA loaded here?");
         return tempArray;
     }
