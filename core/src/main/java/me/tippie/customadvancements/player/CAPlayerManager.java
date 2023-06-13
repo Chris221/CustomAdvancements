@@ -2,6 +2,7 @@ package me.tippie.customadvancements.player;
 
 import lombok.Getter;
 import me.tippie.customadvancements.CustomAdvancements;
+import me.tippie.customadvancements.advancement.InvalidAdvancementException;
 import me.tippie.customadvancements.player.datafile.AdvancementProgressFile;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -10,6 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
+import java.util.logging.Level;
 
 /**
  * Represents the player manager of {@link CAPlayer}'s
@@ -31,7 +33,11 @@ public class CAPlayerManager {
 		if (!caPlayers.containsKey(player.getUniqueId())) {
 			CAPlayer localPlayer = new CAPlayer(player.getUniqueId());
 			for (String path : CustomAdvancements.getInstance().getAllPaths()) {
-				localPlayer.updateMinecraftGui(path);
+				try {
+					localPlayer.updateMinecraftGui(path);
+				} catch (InvalidAdvancementException e) {
+					CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA failed to updateMinecraftGui: " + e.getMessage());
+				}
 			}
 			caPlayers.put(player.getUniqueId(), localPlayer);
 		}
