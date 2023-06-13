@@ -152,11 +152,9 @@ public class AdvancementManager {
      * @return list of all registered {@link AdvancementTree}'s paths
      */
     public String[] getAdvancementTreePaths() {
-        String[] tempArray;
+        List<String> tempArray = new ArrayList<>();
         for (AdvancementTree tree : advancementTrees.values()) {
-            for(String path : tree.getPaths()) {
-                tempArray[] = path;
-            }
+            tempArray.addAll(tree.getPaths())
         }
         return tempArray;
     }

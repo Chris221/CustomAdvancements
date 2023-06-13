@@ -43,7 +43,7 @@ public class AdvancementTree {
 	 */
 	@Getter private final String label;
 
-	private String[] treePaths;
+	private List<String> treePaths = new ArrayList<>();
 
 	/**
 	 * Creates a new {@link AdvancementTree} out of the given file
@@ -206,7 +206,7 @@ public class AdvancementTree {
 				val minecraftProgressType = displayOptions.getString("minecraft-progress-type", "AUTO");
 
 				advancements.put(advancementLabel, new CAdvancement(advancementType, advancementValue, amount, advancementLabel, this.label, rewards, requirements, displayName, displayDescription, displayItem, guiLocation, displayUnit, minecraftGuiFrame, minecraftToast, minecraftChatAnnounce, minecraftProgressType));
-				treePaths[] = config.getName() + advancementLabel;
+				treePaths.add(config.getName() + advancementLabel);
 			}
 
 			//Initialize options
@@ -326,7 +326,7 @@ public class AdvancementTree {
 	 *
 	 * @return list of all the path's of this {@link AdvancementTree}
 	 */
-	public String[] getPaths() {
+	public List<String> getPaths() {
 		return treePaths;
 	}
 
