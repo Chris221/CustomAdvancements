@@ -140,7 +140,10 @@ public class AdvancementManager {
      * @return list of all registered {@link AdvancementTree}'s
      */
     public List<AdvancementTree> getAdvancementTrees() {
-        return new ArrayList<>(advancementTrees.values());
+        CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA loaded here?");
+        ArrayList<> tempArray = new ArrayList<>(advancementTrees.values());
+        CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA loaded here?");
+        return tempArray;
     }
 
     /**

@@ -108,9 +108,7 @@ public final class CustomAdvancements extends JavaPlugin {
 		getLogger().log(Level.INFO, "Advancements per packet is now "+ ADVANCEMENTS_PER_PACKET);
 
 		registerAdvancementTypes();
-		getInstance().getLogger().log(Level.INFO, "SIENA loaded after here?");
 		advancementManager.loadAdvancements();
-		getInstance().getLogger().log(Level.INFO, "SIENA loaded before here?");
 		for (final Player player : Bukkit.getServer().getOnlinePlayers()) {
 			caPlayerManager.loadPlayer(player);
 		}
