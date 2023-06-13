@@ -226,19 +226,19 @@ public class CAdvancement {
 
 	public String getDescription(Player player) {
 		if (description == null) return "No Description";
-		CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA description: " + description);
-		CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA CustomAdvancements.getInstance().isPapiSupport(): " + CustomAdvancements.getInstance().isPapiSupport());
-		CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA player != null: " + (player != null ? "true" : "false"));
+		// CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA description: " + description);
+		// CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA CustomAdvancements.getInstance().isPapiSupport(): " + CustomAdvancements.getInstance().isPapiSupport());
+		// CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA player != null: " + (player != null ? "true" : "false"));
 		String tempDescription = description;
-		CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA start tempDescription: " + tempDescription);
+		// CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA start tempDescription: " + tempDescription);
 		if (CustomAdvancements.getInstance().isPapiSupport() && player != null) {
 			String tempPlaceholder = PlaceholderAPI.setPlaceholders(player,description);
-			CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA tempPlaceholder: " + tempPlaceholder);
+			// CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA tempPlaceholder: " + tempPlaceholder);
 			tempDescription = ChatColor.translateAlternateColorCodes('&',tempPlaceholder);
 		} else {
 			tempDescription = ChatColor.translateAlternateColorCodes('&',description);
 		}
-		CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA end tempDescription: " + tempDescription);
+		// CustomAdvancements.getInstance().getLogger().log(Level.INFO, "SIENA end tempDescription: " + tempDescription);
 		return tempDescription;
 		
 	}
