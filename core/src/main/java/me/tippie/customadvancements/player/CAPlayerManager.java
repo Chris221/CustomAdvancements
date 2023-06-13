@@ -29,7 +29,11 @@ public class CAPlayerManager {
 	 */
 	public void loadPlayer(final Player player) {
 		if (!caPlayers.containsKey(player.getUniqueId())) {
-			caPlayers.put(player.getUniqueId(), new CAPlayer(player.getUniqueId()));
+			CAPlayer localPlayer = CAPlayer new CAPlayer(player.getUniqueId());
+			for (String path : CustomAdvancements.getInstance().getAllPaths()) {
+				localPlayer.updateMinecraftGui(path);
+			}
+			caPlayers.put(player.getUniqueId(), localPlayer);
 		}
 	}
 

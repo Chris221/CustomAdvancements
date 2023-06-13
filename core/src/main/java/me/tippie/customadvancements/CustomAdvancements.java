@@ -275,4 +275,8 @@ public final class CustomAdvancements extends JavaPlugin {
 		messagesFile.getConfig().options().copyDefaults(true);
 		messagesFile.saveConfig();
 	}
+
+	public String[] getAllPaths() {
+		return advancementManager.getAdvancementTreePaths();
+	}
 }
